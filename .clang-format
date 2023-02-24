@@ -1,0 +1,4 @@
+---
+BasedOnStyle: InheritParentConfig
+IndentWidth: 2
+PointerAlignment: Left
