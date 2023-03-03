@@ -29,12 +29,14 @@ HEADER := +-----------------------------+
 
 # Generate section directories (e.g. "build/1 build/2")
 SECTIONS := ${shell fd --type directory --base-directory ${SRC_DIR} --exact-depth 1}
-SECTIONS := ${SECTIONS:.\\%\=%}
+SECTIONS := ${SECTIONS:.\\%=%}
+SECTIONS := ${SECTIONS:%\=%}
 SECTIONS_FULL = ${foreach sect,${SECTIONS},${BUILD_DIR}/${sect}/}
 
 # Generate utility files (e.g. "build/util1.o build/util2.o")
-UTILS := ${shell fd -g '*.c' --base-directory ${SRC_DIR} --exact-depth 1}
-UTILS := ${UTILS:.\\%.c=%.o}
+UTILS := ${shell fd -g 'util*.c' --base-directory ${SRC_DIR} --exact-depth 1}
+UTILS := ${UTILS:.\\%=%}
+UTILS := ${UTILS:c=o}
 UTILS_FULL := ${foreach util,${UTILS},${BUILD_DIR}/${util}}
 
 # Generate source files (e.g. "build/1/main.c build/1/func.c")
