@@ -1,15 +1,12 @@
-#ifndef UTILS_H
-#define UTILS_H
+#ifndef UTILS
+#define UTILS
 
-#include "util-types.h"
-#include <stdbool.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-
-void register_test(const int topic_no, const int q_no, const char category[],
-                   const int num_tests, const callback_handler handler);
-
-bool open_file(const char[], const char[], const callback_handler, char[]);
+// Collection of all utility modules
+#include "util-configs.h" // Global Configurations
+#include "util-libs.h"    // Global Dependencies
+#include "util-cmp.h"     // Comparison Functions
+#include "util-math.h"    // Mathematical Functions
+#include "util-types.h"   // Custom Types
+#include "util-tests.h"   // Testing Infrastructure
 
 #endif

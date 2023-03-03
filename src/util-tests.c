@@ -1,8 +1,7 @@
-#ifndef UTILS_C
-#define UTILS_C
-#define _CRT_SECURE_NO_WARNINGS
+#ifndef UTIL_TESTS_C
+#define UTIL_TESTS_C
 
-#include "utils.h"
+#include "util-tests.h"
 
 void register_test(const int topic_no, const int q_no, const char category[],
                    const int num_tests, const callback_handler handler) {
