@@ -2,8 +2,6 @@
 #define CUBOID_H
 
 #include "../utils.h"
-#include <math.h>
-#include <stdio.h>
 
 double hypotenuse_of(long, long, long);
 long area_of_rectangle(long, long, long);
