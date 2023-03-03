@@ -1,4 +1,11 @@
 ---
+AlignArrayOfStructures: Right
+BreakBeforeBraces: Custom
+BraceWrapping:
+  BeforeCatch: true
+  BeforeElse: true
+  BeforeWhile: true
 BasedOnStyle: InheritParentConfig
 IndentWidth: 2
 PointerAlignment: Left
+# vim:ft=yaml
