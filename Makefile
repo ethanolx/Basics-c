@@ -74,7 +74,7 @@ build: scaffold ${TARGETS}
 
 ${BUILD_DIR}/%/${TARGET}.${EXTENSION}: ${UTILS_FULL} ${call OBJS_FULL,$*}
 ifeq (${OPTIM},true)
-	${if ${findstring $*,$?},${CC} ${call OBJS_FULL,$*} ${UTILS_FULL} -o $@,}
+	${if ${findstring $*,$?},${CC} ${call OBJS_FULL,$*} ${UTILS_FULL} -o $@,${if ${findstring util,$?},${CC} ${call OBJS_FULL,$*} ${UTILS_FULL} -o $@,}}
 else
 	${CC} ${call OBJS_FULL,$*} ${UTILS_FULL} -o $@
 endif
