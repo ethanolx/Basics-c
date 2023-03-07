@@ -5,7 +5,9 @@
 
 void register_test(const int topic_no, const int q_no, const char category[],
                    const int num_tests, const callback_handler handler) {
-  printf("QUESTION %d: %s\n", q_no, category);
+  char* uppercase_category = uppercase(category);
+  printf("QUESTION %d: %s\n", q_no, uppercase_category);
+  free(uppercase_category);
   for (int i = 1; i <= num_tests; i++) {
     // Initialize the buffer paths
     char in_buffer[MAX_PATH_LENGTH];

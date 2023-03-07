@@ -4,6 +4,7 @@
 #include "util-configs.h"
 #include "util-libs.h"
 #include "util-types.h"
+#include "util-strings.h"
 
 // Testing Infrastructure
 void register_test(const int topic_no, const int q_no, const char category[],

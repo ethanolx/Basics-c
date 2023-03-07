@@ -2,6 +2,7 @@
 #define UTIL_LIBS_H
 
 // Global Dependencies
+#include <ctype.h>
 #include <math.h>
 #include <stdbool.h>
 #include <stdio.h>
