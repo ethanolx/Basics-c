@@ -6,8 +6,8 @@
 
 // Global configuration constants
 #define MAX_LINES 1000
-#define MAX_LINE_LENGTH 20
+#define MAX_LINE_LENGTH 30
 #define MAX_PATH_LENGTH 40
-#define MAX_MESSAGE_LENGTH 50
+#define MAX_MESSAGE_LENGTH 75
 
 #endif
