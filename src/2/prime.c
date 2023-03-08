@@ -4,6 +4,10 @@
 #include "prime.h"
 
 bool is_prime(long long x) {
+  if (x <= 1) {
+    return false;
+  }
+
   for (long long i = 2; i <= pow(x, 0.5); i++) {
     if (x % i == 0) {
       return false;
