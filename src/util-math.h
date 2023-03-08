@@ -4,6 +4,7 @@
 #include "util-libs.h"
 
 // Mathematical Functions
-double round_p(const double x, const int precision);
+const double round_p(const double x, const int precision);
+const int arithmetic_sum(const int start, const int end);
 
 #endif

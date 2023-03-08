@@ -17,12 +17,12 @@ void register_test(const int topic_no, const int q_no, const char category[],
 
     char message[MAX_MESSAGE_LENGTH] = "";
     bool passed = open_file(in_buffer, out_buffer, handler, message);
-    if (strlen(message) == 0) {
-      printf("TEST %d: %s\n", i, passed ? "PASSED" : "FAILED");
+
+    printf("TEST %d: %s", i, passed ? "PASSED" : "FAILED");
+    if (strlen(message) > 0) {
+      printf(" [%s]", message);
     }
-    else {
-      printf("TEST %d: %s [%s]\n", i, passed ? "PASSED" : "FAILED", message);
-    }
+    printf("\n");
   }
   printf("\n");
 }
