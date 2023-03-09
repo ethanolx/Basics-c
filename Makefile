@@ -101,6 +101,7 @@ ${BUILD_DIR}/%/:
 # Remove all build objects
 purge:
 	rm -Recurse ${BUILD_DIR}/**/*.o
+	rm -Recurse ${BUILD_DIR}/*.o
 
 
 # Clean step
