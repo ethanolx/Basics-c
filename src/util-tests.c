@@ -18,7 +18,7 @@ void register_test(const int topic_no, const int q_no, const char category[],
     char message[MAX_MESSAGE_LENGTH] = "";
     bool passed = open_file(in_buffer, out_buffer, handler, message);
 
-    printf("TEST %d: %s", i, passed ? "PASSED" : "FAILED");
+    printf("TEST %2d: %s", i, passed ? "PASS" : "FAIL");
     if (strlen(message) > 0) {
       printf(" [%s]", message);
     }
