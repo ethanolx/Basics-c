@@ -3,11 +3,17 @@
 
 #include "util-tests.h"
 
+// Initialize 2 2D arrays to store the raw characters
+// of the input and output
+char in_buffer[MAX_LINES][MAX_LINE_LENGTH];
+char out_buffer[MAX_LINES][MAX_LINE_LENGTH];
+
 void register_test(const int topic_no, const int q_no, const char category[],
                    const int num_tests, const callback_handler handler) {
   char* uppercase_category = uppercase(category);
   printf("QUESTION %d: %s\n", q_no, uppercase_category);
   free(uppercase_category);
+  int num_tests_passed = 0;
   for (int i = 1; i <= num_tests; i++) {
     // Initialize the buffer paths
     char in_buffer[MAX_PATH_LENGTH];
@@ -17,14 +23,16 @@ void register_test(const int topic_no, const int q_no, const char category[],
 
     char message[MAX_MESSAGE_LENGTH] = "";
     bool passed = open_file(in_buffer, out_buffer, handler, message);
+    num_tests_passed += passed;
 
-    printf("TEST %2d: %s", i, passed ? "PASS" : "FAIL");
+    printf("TEST %3d: %s", i, passed ? "PASS" : "FAIL");
     if (strlen(message) > 0) {
       printf(" [%s]", message);
     }
     printf("\n");
   }
-  printf("\n");
+  float rate = (float)num_tests_passed / (float)num_tests * 100.0;
+  printf("STATUS  : %d/%d [%.2f%%]\n\n", num_tests_passed, num_tests, rate);
 }
 
 bool open_file(const char input_file_name[], const char output_file_name[],
@@ -37,11 +45,6 @@ bool open_file(const char input_file_name[], const char output_file_name[],
   if (in_file_ptr == NULL || out_file_ptr == NULL) {
     return false;
   }
-
-  // Initialize 2 2D arrays to store the raw characters
-  // of the input and output
-  char in_buffer[MAX_LINES][MAX_LINE_LENGTH];
-  char out_buffer[MAX_LINES][MAX_LINE_LENGTH];
 
   // Loop over and extract all the data
   // from the source files

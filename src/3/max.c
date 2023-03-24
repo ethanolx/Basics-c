@@ -9,9 +9,14 @@ long find_max(const long list[], long start, long end) {
     return list[start];
   }
 
-  const long max_of_remainder = find_max(list, start + 1, end);
+  // Find central index of list
+  const long midpoint = (start + end) / 2;
 
-  return list[start] > max_of_remainder ? list[start] : max_of_remainder;
+  // Binary search
+  const long max_1 = find_max(list, start, midpoint);
+  const long max_2 = find_max(list, midpoint, end);
+
+  return max_1 > max_2 ? max_1 : max_2;
 }
 
 bool max_handler(const char in_buffer[][MAX_LINE_LENGTH], const int num_lines,
